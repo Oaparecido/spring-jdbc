@@ -1,5 +1,6 @@
 package com.example.tutorial.model;
 
+import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +8,11 @@ import lombok.Setter;
 @Setter
 public class TutorialModel {
 
+    @Generated
     private Long id;
+
     private String title;
+
     private String description;
 
 

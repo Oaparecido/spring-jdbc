@@ -16,4 +16,8 @@ public class TutorialService {
     public List<TutorialModel> getTutorials() {
         return repository.getTutorial();
     }
+
+    public TutorialModel create(TutorialModel model) {
+        return repository.create(model);
+    }
 }
