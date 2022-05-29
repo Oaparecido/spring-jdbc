@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  db:
+    image: postgres:13
+    container_name: postgres-tutorial
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-tutorial:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: tutorial
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+
+volumes:
+  postgres-tutorial:
