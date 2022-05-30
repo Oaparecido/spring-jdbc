@@ -9,7 +9,7 @@ import lombok.Setter;
 public class TutorialModel {
 
     @Generated
-    private Long id;
+    private int id;
 
     private String title;
 

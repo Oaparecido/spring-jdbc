@@ -20,7 +20,7 @@ public class TutorialController {
     }
 
     @PostMapping
-    public @ResponseBody TutorialModel create(@RequestBody TutorialModel model) {
+    public @ResponseBody Number create(@RequestBody TutorialModel model) {
         return service.create(model);
     }
 }

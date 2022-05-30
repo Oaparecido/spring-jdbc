@@ -17,7 +17,7 @@ public class TutorialService {
         return repository.getTutorial();
     }
 
-    public TutorialModel create(TutorialModel model) {
+    public Number create(TutorialModel model) {
         return repository.create(model);
     }
 }
