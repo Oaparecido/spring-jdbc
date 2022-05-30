@@ -21,13 +21,20 @@ public class TutorialRepository {
     private JdbcTemplate jdbcTemplate;
 
     public List<TutorialModel> getTutorial() {
-        TutorialModel model = new TutorialModel();
 
-        model.setTitle("Title Example");
-        model.setDescription("Description Example");
-        List<TutorialModel> tutorials = new ArrayList<>();
-        tutorials.add(model);
-        return tutorials;
+        return jdbcTemplate.query("select * from tutorial_table", new RowMapper<TutorialModel>() {
+            @Override
+            public TutorialModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+                TutorialModel model = new TutorialModel();
+
+
+                model.setId(rs.getInt("id"));
+                model.setTitle(rs.getString("title"));
+                model.setDescription(rs.getString("description"));
+
+                return model;
+            }
+        });
     }
 
     public Number create(TutorialModel model) {
